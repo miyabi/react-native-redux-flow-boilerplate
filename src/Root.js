@@ -18,14 +18,9 @@ type State = {
 
 export default class Root extends Component<DefaultProps, Props, State> {
   static defaultProps = {}
-  state = {}
-
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      isLoaded: false,
-      store: configureStore(() => this.setState({ isLoaded: true })),
-    }
+  state = {
+    isLoaded: false,
+    store: configureStore(() => this.setState({ isLoaded: true })),
   }
 
   render(): ?Element<any> {
