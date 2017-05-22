@@ -1,6 +1,7 @@
 /**
  * @flow
  */
+'use strict'
 
 import type { Reducers } from '../reducers'
 

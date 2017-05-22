@@ -1,25 +1,24 @@
 /**
  * @flow
  */
+'use strict'
 
-import React, { Component } from 'react'
+import React, { Component, Element } from 'react'
 import { Provider } from 'react-redux'
 import type { Store } from './types/Store'
 import { configureStore } from './store/configureStore'
 import AppContainer from './containers/AppContainer'
 
-type Props = {
-};
-
+type Props = {};
+type DefaultProps = {};
 type State = {
   isLoaded: boolean,
   store: Store,
 };
 
-export default class Root extends Component {
-  static defaultProps: Props = {};
-  props: Props;
-  state: State;
+export default class Root extends Component<DefaultProps, Props, State> {
+  static defaultProps = {}
+  state = {}
 
   constructor(props: Props) {
     super(props)
@@ -29,7 +28,7 @@ export default class Root extends Component {
     }
   }
 
-  render() {
+  render(): ?Element<any> {
     if (!this.state.isLoaded) {
       // Wait until the store is available.
       return null

@@ -1,6 +1,7 @@
 /**
  * @flow
  */
+'use strict'
 
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
@@ -10,7 +11,7 @@ import { AsyncStorage } from 'react-native'
 import type { Store } from '../types/Store'
 import reducers from '../reducers'
 
-export const configureStore = (onComplete: () => void): Store => {
+export function configureStore(onComplete: () => void): Store {
   const middlewares = [thunkMiddleware]
 
   if (__DEV__) {

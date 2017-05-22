@@ -1,11 +1,12 @@
 /**
  * @flow
  */
+'use strict'
 
-import type { Dispatch, GetState, Action } from '../types'
+import type { Dispatch, GetState, Action, ThunkAction } from '../types'
 
-export const initialized = (isInitialized: boolean) => {
+export function initialized(isInitialized: boolean): ThunkAction {
   return (dispatch: Dispatch, getState: GetState) => {
-    dispatch(({ type: 'INITIALIZED', isInitialized }: Action))
+    dispatch(({ type: 'INITIALIZED', payload: isInitialized }: Action))
   }
 }

@@ -1,6 +1,7 @@
 /**
  * @flow
  */
+'use strict'
 
 import React, { Component, Element } from 'react'
 import { connect } from 'react-redux'
@@ -8,21 +9,15 @@ import type { Dispatch, State as StoreState } from '../types'
 import App from '../components/App'
 
 type Props = {
+  // Mapped
   dispatch?: Dispatch,
 };
+type DefaultProps = {};
+type State = {};
 
-type State = {
-};
-
-class AppContainer extends Component {
-  static defaultProps: Props = {};
-  props: Props;
-  state: State;
-
-  constructor(props: Props) {
-    super(props)
-    this.state = {}
-  }
+class AppContainer extends Component<DefaultProps, Props, State> {
+  static defaultProps = {};
+  state = {};
 
   render(): ?Element<any> {
     return (
@@ -31,7 +26,7 @@ class AppContainer extends Component {
   }
 }
 
-const select = (store: StoreState, props: Props): Props => {
+function select(store: StoreState, props: Props) {
   // Map store state to props
   return {}
 }

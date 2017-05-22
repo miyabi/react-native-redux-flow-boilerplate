@@ -1,9 +1,10 @@
 /**
  * @flow
  */
+'use strict'
 
 export type AppAction = 
-  | { type: 'INITIALIZED', isInitialized: boolean }
+  | { type: 'INITIALIZED', payload: boolean }
 ;
 
 export type Action =

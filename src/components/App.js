@@ -1,6 +1,7 @@
 /**
  * @flow
  */
+'use strict'
 
 import React, { Component, Element } from 'react'
 import {
@@ -8,21 +9,13 @@ import {
   View,
 } from 'react-native'
 
-type Props = {
-};
+type Props = {};
+type DefaultProps = {};
+type State = {};
 
-type State = {
-};
-
-export default class App extends Component {
-  static defaultProps: Props = {};
-  props: Props;
-  state: State;
-
-  constructor(props: Props) {
-    super(props)
-    this.state = {}
-  }
+export default class App extends Component<DefaultProps, Props, State> {
+  static defaultProps = {}
+  state = {}
 
   render(): ?Element<any> {
     return (
